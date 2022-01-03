@@ -22,6 +22,7 @@ app.use(logger)
 
 // route for render file with status code
 app.get('/', (req, res) => {
+    console.log("log from home page")
     res.status(200).render('index')
 })
 
@@ -41,8 +42,10 @@ app.use('/users', userRouter)
 
 // middleware
 function logger(req, res, next) {
-    console.log(req.originalUrl)
+    // console.log(req.originalUrl)
+    console.log('before');
     next()
+    console.log('after');
 }
 
 
